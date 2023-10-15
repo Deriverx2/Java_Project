@@ -1,0 +1,62 @@
+Database Queries
+----------------
+
+create database hotelmanagementsystem;
+
+use hotelmanagementsystem;
+
+create table login(username varchar(25), password varchar(25));
+
+insert into login values('admin', '12345');
+
+select * from login;
+
+create table employee(name varchar(25), age varchar(10), gender varchar(15), job varchar(30), salary varchar(15), phone varchar(15), email varchar(40), aadhar varchar(20));
+
+describe employee;
+
+INSERT INTO employee (name, age, gender, job, salary, phone, email, aadhar)
+VALUES
+    ('John Doe', '30', 'Male', 'Manager', '50000', '123-456-7890', 'john@example.com', '1234-5678-9012-3456'),
+    ('Jane Smith', '25', 'Female', 'Receptionist', '35000', '987-654-3210', 'jane@example.com', '9876-5432-1098-7654'),
+    ('Robert Johnson', '40', 'Male', 'Chef', '45000', '555-555-5555', 'robert@example.com', '5555-5555-5555-5555'),
+    ('Sara Brown', '28', 'Female', 'Housekeeping', '30000', '777-777-7777', 'sara@example.com', '7777-7777-7777-7777');
+
+select * from employee;
+
+create table room(roomnumber varchar(10), availability varchar(20), cleaning_status varchar(20), price varchar(20), bed_type varchar(20));
+
+select * from room;
+
+INSERT INTO room (roomnumber, availability, cleaning_status, price, bed_type)
+VALUES
+    ('101', 'Available', 'Clean', '100', 'Single'),
+    ('102', 'Available', 'Clean', '120', 'Double'),
+    ('103', 'Occupied', 'Dirty', '90', 'Single'),
+    ('104', 'Available', 'Clean', '150', 'Double'),
+    ('105', 'Occupied', 'Dirty', '80', 'Single'),
+    ('106', 'Available', 'Clean', '130', 'Double'),
+    ('201', 'Available', 'Clean', '110', 'Single'),
+    ('202', 'Occupied', 'Dirty', '140', 'Double'),
+    ('203', 'Available', 'Clean', '95', 'Single'),
+    ('204', 'Available', 'Clean', '170', 'Double');
+
+update room set availability = 'Available' where roomnumber = '101';
+
+create table driver(name varchar(20), age varchar(10), gender varchar(15), company varchar(20), brand varchar(20), available varchar(20), location varchar(40));
+
+select * from driver;
+
+create table customer(document varchar(20), number varchar(30), name varchar(30), gender varchar(15), country varchar(20), room varchar(10), checkintime varchar(80), deposit varchar(20));
+
+select * from customer;
+
+create table department(department varchar(30), budget varchar(30));
+
+insert into department values('Front Office','500000');
+insert into department values('Housekeeping', '40000');
+insert into department values('Food and Beverage', '23000');
+insert into department values('Kitchen or Food Production', '540000');
+insert into department values('Security', '320000');
+
+select * from department;
